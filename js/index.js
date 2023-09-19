@@ -2,8 +2,8 @@ history.scrollRestoration = "manual";
 const wrap = document.getElementsByClassName("wrap")[0]; // 보일 영역
 const slide = document.getElementsByClassName("slide");
 let page = 0; // 영역 포지션 초기값
+let animation = true;
 const lastPage = slide.length - 1; // 마지막 페이지
-
 const slideLength = document.querySelectorAll(".slide").length;
 let createBullet = ``;
 for (i = 0; i < slideLength; i++) {
@@ -14,7 +14,12 @@ document.querySelector(".pagination ul").innerHTML = createBullet;
 window.addEventListener(
   "wheel",
   e => {
+    if (!animation) return;
     e.preventDefault();
+    animation = false;
+    setTimeout(() => {
+      animation = true;
+    }, 1000);
     if (e.deltaY > 0) {
       page++;
     } else if (e.deltaY < 0) {
@@ -25,9 +30,7 @@ window.addEventListener(
     } else if (page > lastPage) {
       page = lastPage;
     }
-    console.log(e.deltaY);
     wrap.style.top = page * -100 + "vh";
-    console.log(page);
   },
   { passive: false }
 ); // 디폴트 기능 제거 - 스크롤
