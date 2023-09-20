@@ -143,6 +143,10 @@ header, section[class^=con-], footer {
 
 .icon {
   position: absolute;
+  -webkit-transform: scale(0.3333333333);
+          transform: scale(0.3333333333);
+  -webkit-transform-origin: right bottom;
+          transform-origin: right bottom;
 }
 .icon.float {
   -webkit-animation: float 2s ease-in-out infinite alternate;

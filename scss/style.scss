@@ -88,6 +88,8 @@ header,section[class^="con-"],footer{
 
 .icon{
   position: absolute;
+  transform: scale(calc(1 / 3));
+  transform-origin: right bottom;
   &.float{
     animation:float 2s ease-in-out infinite alternate;
     &.index-2{
