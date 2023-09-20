@@ -7,7 +7,7 @@ const lastPage = slide.length - 1; // 마지막 페이지
 const slideLength = document.querySelectorAll(".slide").length;
 let createBullet = ``;
 for (i = 0; i < slideLength; i++) {
-  createBullet += `<li class="bullet" data-index=${i}>○</li>`;
+  createBullet += `<li class="bullet" data-index=${i}></li>`;
 }
 document.querySelector(".pagination ul").innerHTML = createBullet;
 

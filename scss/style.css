@@ -560,5 +560,13 @@ footer .footer-con-2 .footer-nav-wrap ul {
           transform: translate(0, -50%);
 }
 .pagination ul li {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  border: 2px solid #fff;
+  background-color: #000;
   cursor: pointer;
+}
+.pagination ul li:not(:last-of-type) {
+  margin-bottom: 12px;
 }
