@@ -15,7 +15,7 @@ window.addEventListener(
   "wheel",
   e => {
     if (!animation) return;
-    e.preventDefault();
+    // e.preventDefault();
     animation = false;
     setTimeout(() => {
       animation = true;
