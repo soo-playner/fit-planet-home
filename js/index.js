@@ -11,34 +11,35 @@ for (i = 0; i < slideLength; i++) {
 }
 document.querySelector(".pagination ul").innerHTML = createBullet;
 
-window.addEventListener(
-  "wheel",
-  e => {
-    if (!animation) return;
-    // e.preventDefault();
-    animation = false;
-    setTimeout(() => {
-      animation = true;
-    }, 1000);
-    if (e.deltaY > 0) {
-      page++;
-    } else if (e.deltaY < 0) {
-      page--;
-    }
-    if (page < 0) {
-      page = 0;
-    } else if (page > lastPage) {
-      page = lastPage;
-    }
-    wrap.style.top = page * -100 + "vh";
-  }
-  // { passive: false }
-); // 디폴트 기능 제거 - 스크롤
+// window.addEventListener(
+//   "wheel",
+//   e => {
+//     if (!animation) return;
+//     // e.preventDefault();
+//     animation = false;
+//     setTimeout(() => {
+//       animation = true;
+//     }, 1000);
+//     if (e.deltaY > 0) {
+//       page++;
+//     } else if (e.deltaY < 0) {
+//       page--;
+//     }
+//     if (page < 0) {
+//       page = 0;
+//     } else if (page > lastPage) {
+//       page = lastPage;
+//     }
+//     wrap.style.top = page * -100 + "vh";
+//   }
+//   // { passive: false }
+// ); // 디폴트 기능 제거 - 스크롤
 
 document.querySelectorAll(".bullet").forEach(el => {
   el.addEventListener("click", e => {
     const index = e.target.dataset.index;
     page = Number(index);
-    wrap.style.top = page * -100 + "vh";
+    // wrap.style.top = page * -100 + "vh";
+    scrollTo({ left: 0, top: page * window.innerHeight, behavior: "smooth" });
   });
 });
