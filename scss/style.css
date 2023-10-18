@@ -64,15 +64,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
 }
 
-html {
-  height: 100%;
-}
-
 body {
-  height: 100%;
   margin: 0;
   border: 0;
-  padding: 0;
+  padding: 86px 0 0;
 }
 
 /* 믹스인 */
@@ -169,6 +164,9 @@ section[class^=con-], footer {
   background: url("../assets/img/background_header.png") center center/cover no-repeat;
 }
 .wrap.pc header .header-top {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -182,11 +180,11 @@ section[class^=con-], footer {
   width: 100%;
   height: 86px;
   background-color: #000;
+  z-index: 10;
 }
 .wrap.pc header .header-contents {
   position: relative;
-  margin-top: 199px;
-  padding: 0 calc((100vw - 1200px - 17px) / 2);
+  padding: 199px calc((100vw - 1200px - 17px) / 2) 0;
   z-index: 1;
 }
 .wrap.pc header .header-contents .text-wrap h3 {
@@ -343,7 +341,12 @@ section[class^=con-], footer {
   right: 2.3437vw;
   bottom: 3.6458vw;
 }
-.wrap.pc section[class^=con-].con-1-2 .img-wrap .icon {
+.wrap.pc section[class^=con-].con-1-2 .img-wrap .icon .img {
+  width: 630px;
+  height: 100px;
+  max-height: 100%;
+}
+.wrap.pc section[class^=con-].con-1-2 .img-wrap .icon .icon {
   top: 7.552vw;
   right: 11.458vw;
 }
@@ -633,11 +636,11 @@ section[class^=con-], footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   bottom: 6.77vw;
   right: 8.4375vw;
-  font-size: 28px;
+  font-size: 18px;
   font-weight: 400;
   color: inherit;
   border-radius: 50%;
