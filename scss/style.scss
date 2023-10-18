@@ -410,4 +410,18 @@ section[class^="con-"],footer{
       }
     }
   }
+  .button-top{
+    position: fixed;
+    @include flex(space-evenly);
+    flex-direction: column;
+    width: 100px;
+    height: 100px;
+    bottom: 6.77vw;
+    right: 8.4375vw;
+    @include font(28px,400);
+    border-radius: 50%;
+    color: #fff;
+    background-color: #000;
+    cursor: pointer;
+  }
 }

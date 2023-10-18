@@ -618,3 +618,30 @@ section[class^=con-], footer {
 .wrap.pc .pagination ul li:not(:last-of-type) {
   margin-bottom: 12px;
 }
+.wrap.pc .button-top {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100px;
+  height: 100px;
+  bottom: 6.77vw;
+  right: 8.4375vw;
+  font-size: 28px;
+  font-weight: 400;
+  color: inherit;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #000;
+  cursor: pointer;
+}

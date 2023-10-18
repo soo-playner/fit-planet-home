@@ -236,12 +236,16 @@
         </div>
       </footer>
 
-      <aside class="pagination">
-        <ul></ul>
+      <aside class="button-top">
+        <img src="assets/img/icon-top.png" alt="" />
+        <p>TOP</p>
       </aside>
     </main>
 
-    <script src="/js/index.js"></script>
-    <script></script>
+    <script>
+      document.querySelector(".button-top").addEventListener("click", () => {
+        window.scrollTo(0, 0);
+      });
+    </script>
   </body>
 </html>
