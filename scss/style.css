@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 body {
   margin: 0;
   border: 0;
-  padding: 86px 0 0;
+  padding: 0;
 }
 
 /* 믹스인 */
@@ -184,22 +184,24 @@ section[class^=con-], footer {
 }
 .wrap.pc header .header-contents {
   position: relative;
-  padding: 199px calc((100vw - 1200px - 17px) / 2) 0;
+  padding: 292px calc((100vw - 1200px - 17px) / 2) 0;
   z-index: 1;
 }
 .wrap.pc header .header-contents .text-wrap h3 {
-  margin-bottom: 13px;
-  font-size: 32px;
+  margin-bottom: 12px;
+  font-size: 34px;
   font-weight: 300;
   color: inherit;
-  line-height: 38px;
+  line-height: 50px;
+  letter-spacing: -2px;
 }
 .wrap.pc header .header-contents .text-wrap h2 {
-  margin-bottom: 40px;
-  font-size: 50px;
+  margin-bottom: 48px;
+  font-size: 66px;
   font-weight: 700;
   color: inherit;
-  line-height: 1.2;
+  line-height: 82px;
+  letter-spacing: -2px;
 }
 .wrap.pc header .header-contents .text-wrap h2 span {
   color: #4DDAFF;
@@ -214,7 +216,6 @@ section[class^=con-], footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 40px;
   -webkit-column-gap: 15px;
      -moz-column-gap: 15px;
           column-gap: 15px;
@@ -256,8 +257,7 @@ section[class^=con-], footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 880px;
-  height: 100vh;
+  height: 1000px;
 }
 .wrap.pc section[class^=con-].right {
   -webkit-box-orient: horizontal;
@@ -293,24 +293,26 @@ section[class^=con-], footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding-left: 118px;
+  padding-left: 84px;
 }
 .wrap.pc section[class^=con-] .text-wrap h3 {
   font-size: 24px;
   font-weight: 700;
   color: #8337FF;
+  line-height: 52px;
 }
 .wrap.pc section[class^=con-] .text-wrap h2 {
   margin-bottom: 20px;
   font-size: 48px;
   font-weight: 700;
   color: inherit;
+  line-height: 68px;
   letter-spacing: -2px;
 }
 .wrap.pc section[class^=con-] .text-wrap p {
   font-size: 20px;
   font-weight: 400;
-  color: #7A8495;
+  color: #9DA1AA;
   line-height: 34px;
   letter-spacing: -2px;
 }
@@ -341,14 +343,14 @@ section[class^=con-], footer {
   right: 2.3437vw;
   bottom: 3.6458vw;
 }
-.wrap.pc section[class^=con-].con-1-2 .img-wrap .icon .img {
-  width: 630px;
-  height: 100px;
-  max-height: 100%;
-}
-.wrap.pc section[class^=con-].con-1-2 .img-wrap .icon .icon {
+.wrap.pc section[class^=con-].con-1-2 .img-wrap .icon {
   top: 7.552vw;
   right: 11.458vw;
+  right: calc(11.458vw - 93px);
+}
+.wrap.pc section[class^=con-].con-1-2 .img {
+  position: relative;
+  right: -93px;
 }
 .wrap.pc section[class^=con-].con-2 .img-wrap .icon {
   top: 11.0416vw;
