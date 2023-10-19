@@ -129,7 +129,7 @@ section[class^="con-"],footer{
       @include flex(space-between);
       padding: 0 calc( (100vw - 1200px - 17px) / 2);
       width: 100%;
-      height: 86px;
+      height: 68px;
       background-color: #000;
       z-index: 10;
     }
