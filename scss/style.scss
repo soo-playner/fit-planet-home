@@ -68,6 +68,11 @@ body {
   100%{transform:translateY(25%) }
 }
 
+@keyframes glitter{
+  0%{transform:scale(0.4) }
+  100%{transform:scale(1) }
+}
+
 .letter2{
   letter-spacing: -2px;
 }
@@ -88,6 +93,12 @@ section[class^="con-"],footer{
 }
 .float{
   animation:float 2s ease-in-out infinite alternate;
+  &.index-2{
+    animation-delay: 1s
+  }
+}
+.glitter{
+  animation:glitter 1s ease-in-out infinite alternate;
   &.index-2{
     animation-delay: 1s
   }
@@ -162,10 +173,27 @@ section[class^="con-"],footer{
     .text-wrap>p{
       color: #CECECE;
     }
-    .icon{
-      bottom: 40px;
-      right: 11.04vw;
-      z-index: 0;
+    .character-wrap{
+      img{
+        bottom: 40px;
+        right: 11.04vw;
+        z-index: 0;
+      }
+    }
+    .star{
+      position: absolute;
+      &.top{
+        top: 177px;
+        right: 296px;
+      }
+      &.right{
+        top: 427px;
+        right: 147px;
+      }
+      &.left{
+        left: 184px;
+        top: 502px;
+      }
     }
     
   }
@@ -315,6 +343,7 @@ section[class^="con-"],footer{
     }
 
     &.con-5{
+      position: relative;
       background: url('../assets/img/background_con5.png') center center/cover no-repeat;
       justify-content: center;
       .text-wrap{
@@ -344,6 +373,21 @@ section[class^="con-"],footer{
             border-radius: 5px;
             border: 1px solid rgba(255,255,255,0.5);
           }
+        }
+      }
+      .star{
+        position: absolute;
+        &.top{
+          top: 179px;
+          right: 226px;
+        }
+        &.right{
+          right: 132px;
+          bottom: 194px;
+        }
+        &.left{
+          left: 176px;
+          bottom: 194px;
         }
       }
     }

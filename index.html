@@ -57,7 +57,12 @@
             </p> -->
           </div>
         </div>
-        <img class="icon" src="./assets/img/header_icon.png" alt="" class="icon" />
+        <div class="character-wrap">
+          <img class="icon" src="./assets/img/header_icon.png" alt="" />
+        </div>
+        <img src="./assets/img/star_large.png" alt="" class="star top glitter" />
+        <img src="./assets/img/star_medium.png" alt="" class="star right index-2 glitter" />
+        <img src="./assets/img/star_small.png" alt="" class="star left glitter" />
       </header>
 
       <section class="con-1 bg slide">
@@ -151,28 +156,28 @@
             <img src="./assets/img/con4_img1.png" alt="" class="img" />
             <dl>
               <dt>등록된 운동시설</dt>
-              <dd>1,000곳</dd>
+              <dd><span class="count-animation" data-count="1200">0</span>곳</dd>
             </dl>
           </li>
           <li class="partner">
             <img src="./assets/img/con4_img2.png" alt="" class="img" />
             <dl>
               <dt>등록된 트레이너</dt>
-              <dd>1,000명</dd>
+              <dd><span class="count-animation" data-count="3000">0</span>명</dd>
             </dl>
           </li>
           <li class="partner">
             <img src="./assets/img/con4_img3.png" alt="" class="img" />
             <dl>
               <dt>제휴 업체</dt>
-              <dd>1,000곳</dd>
+              <dd><span class="count-animation" data-count="200">0</span>곳</dd>
             </dl>
           </li>
           <li class="partner">
             <img src="./assets/img/con4_img4.png" alt="" class="img" />
             <dl>
               <dt>서비스 운영</dt>
-              <dd>서울, 경기 외 3개 지역</dd>
+              <dd>서울, 경기 외 <span class="count-animation" data-count="30">0</span>개 지역</dd>
             </dl>
           </li>
         </ul>
@@ -188,6 +193,9 @@
             <a href="#" class="link-apple"><img src="./assets/img/appstore.png" alt="" />App Store</a>
           </div>
         </div>
+        <img src="./assets/img/star_medium.png" alt="" class="star top glitter" />
+        <img src="./assets/img/star_large.png" alt="" class="star right index-2 glitter" />
+        <img src="./assets/img/star_medium.png" alt="" class="star left glitter" />
       </section>
 
       <footer>
@@ -245,6 +253,43 @@
     <script>
       document.querySelector(".button-top").addEventListener("click", () => {
         window.scrollTo(0, 0);
+      });
+
+      const countElements = document.querySelectorAll(".count-animation");
+      let standbyCount = true;
+
+      function startCountAnimation(element, targetCount, duration) {
+        const startCount = 0;
+        let startTime;
+
+        function animate(timestamp) {
+          if (!startTime) startTime = timestamp;
+
+          const progress = timestamp - startTime;
+          const increment = (targetCount - startCount) * (progress / duration);
+          const currentCount = startCount + increment;
+
+          if (currentCount < targetCount) {
+            element.textContent = Math.round(currentCount).toLocaleString("ko-KR");
+            requestAnimationFrame(animate);
+          } else {
+            element.textContent = targetCount.toLocaleString("ko-KR");
+          }
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      window.addEventListener("scroll", () => {
+        const con4 = document.querySelector(".con-4");
+        if (standbyCount && con4.getBoundingClientRect().top < 200) {
+          standbyCount = false;
+          countElements.forEach(element => {
+            const targetCount = parseInt(element.getAttribute("data-count"), 10);
+            const duration = 2000;
+            startCountAnimation(element, targetCount, duration);
+          });
+        }
       });
     </script>
   </body>

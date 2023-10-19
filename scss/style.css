@@ -109,6 +109,26 @@ body {
             transform: translateY(25%);
   }
 }
+@-webkit-keyframes glitter {
+  0% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes glitter {
+  0% {
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
 .letter2 {
   letter-spacing: -2px;
 }
@@ -138,6 +158,15 @@ section[class^=con-], footer {
           animation: float 2s ease-in-out infinite alternate;
 }
 .float.index-2 {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.glitter {
+  -webkit-animation: glitter 1s ease-in-out infinite alternate;
+          animation: glitter 1s ease-in-out infinite alternate;
+}
+.glitter.index-2 {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
 }
@@ -242,10 +271,25 @@ section[class^=con-], footer {
 .wrap.pc header .text-wrap > p {
   color: #CECECE;
 }
-.wrap.pc header .icon {
+.wrap.pc header .character-wrap img {
   bottom: 40px;
   right: 11.04vw;
   z-index: 0;
+}
+.wrap.pc header .star {
+  position: absolute;
+}
+.wrap.pc header .star.top {
+  top: 177px;
+  right: 296px;
+}
+.wrap.pc header .star.right {
+  top: 427px;
+  right: 147px;
+}
+.wrap.pc header .star.left {
+  left: 184px;
+  top: 502px;
 }
 .wrap.pc section[class^=con-] {
   display: -webkit-box;
@@ -441,6 +485,7 @@ section[class^=con-], footer {
   color: #7A8495;
 }
 .wrap.pc section[class^=con-].con-5 {
+  position: relative;
   background: url("../assets/img/background_con5.png") center center/cover no-repeat;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -504,6 +549,21 @@ section[class^=con-], footer {
   color: #fff;
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.wrap.pc section[class^=con-].con-5 .star {
+  position: absolute;
+}
+.wrap.pc section[class^=con-].con-5 .star.top {
+  top: 179px;
+  right: 226px;
+}
+.wrap.pc section[class^=con-].con-5 .star.right {
+  right: 132px;
+  bottom: 194px;
+}
+.wrap.pc section[class^=con-].con-5 .star.left {
+  left: 176px;
+  bottom: 194px;
 }
 .wrap.pc footer {
   height: 366px;
